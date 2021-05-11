@@ -1,0 +1,74 @@
+Passwords:
+ 
+LEVEL 0: bandit0
+
+       | We use ssh bandit0@bandit.labs.overthewire.org -p 2220 to login using the above pass which is already given |
+       | Using ls command, we find a file named readme and read it using cat command which contain passs for next level.|
+
+LEVEL 1: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+       | We use ssh bandit1@bandit.labs.overthewire.org -p 2220 to login using the above pass |
+       | | Using ls command, we find a file named '-' and read it using cat ./- command which contain passs for next level.|      
+    
+LEVEL 2: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+ 
+       | We use ssh bandit2@bandit.labs.overthewire.org -p 2220 to login using the above pass |
+       | Using ls command, we find a file named spaces in this filename and read it using cat spaces\ in\ this\ filename which contain passs for next level.|
+
+LEVEL 3: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+       | We use ssh bandit3@bandit.labs.overthewire.org -p 2220 to login using the above pass |
+       | Using ls command, we find a inhere/ directory and enter the directory using cd inhere command. |
+       | Using ls -a command we find a .hidden file and read it using cat .hidden command which contain pass for next level.|
+
+LEVEL 4: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+       | We use ssh bandit4@bandit.labs.overthewire.org -p 2220 to login using the above pass |
+       | Using ls command, we find a inhere/ directory and enter the directory using cd inhere command. |
+       | Using using ls command, we find a lot of files in which we will use file ./* command to get the information about the file type|
+       | On using the above command, we find that there is only one ASCII type file which is -file07 |
+       | Read the file using cat ./-file07 command which contain pass for next level.|
+
+LEVEL 5: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+ 
+       | We use ssh bandit5@bandit.labs.overthewire.org -p 2220 to login using the above pass |
+       | Using ls command, we find a inhere/ directory and enter the directory using cd inhere command. |
+       | Using find . -size 1033c ! -executable command, we find the only human readable file in the directory which is ./maybehere07/.file2 |
+       | Read the file using cat ./maybehere07/.file2 command which contain the pass for next level |
+
+       
+LEVEL 6: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+       | We use ssh bandit6@bandit.labs.overthewire.org -p 2220 to login using the above pass |
+       | Using the given conditions we find the file using find / -user bandit7 -group bandit6 -size 33c command. |
+       | Read the file using cat command which contain pass for next level.|
+
+LEVEL 7: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+       | We use ssh bandit7@bandit.labs.overthewire.org -p 2220 to login using the above pass | 
+       | Using ls command, we find a data.txt file. |
+       | Using cat data.txt| grep millionth command, we find the password next to the word millionth. |   
+
+LEVEL 8: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+       | We use ssh bandit8@bandit.labs.overthewire.org -p 2220 to login using the above pass | 
+       | Since we have to find a unique line , we use cat data.txt|sort|uniq -u command, which will be the pass for next level|
+
+LEVEL 9: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+       | We use ssh bandit9@bandit.labs.overthewire.org -p 2220 to login using the above pass |  
+       | Using ls command, we find a data.txt file. |   
+       | Since there are only few human readable strings, we use strings data.txt to get the readable strings in the file|
+       | Using grep = command we find a string that is preceded by '=' characters. The string is pass for the next level. |
+
+LEVEL 10: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+        
+       | We use ssh bandit10@bandit.labs.overthewire.org -p 2220 to login using the above pass |  
+       | Using ls command, we find a data.txt file. |  
+       | On reading the file using cat data.txt command,we get a string ending with == character which represents base 64 encoded data.|
+       | Using  cat data.txt | base64 --decode command we can decode the encoded string and find the pass for nexy level.|
+
+LEVEL 11 : IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+
+
