@@ -1,0 +1,63 @@
+CTF Challenges:
+
+1.Multi-Encoder
+  The given cipher.txt is a multiple encoded base 64 and hex string. Since the given text is in hex format, we first need to decode and obtain a base 64 encoded string. 
+  Next, we need to decode the obtained base 64 string using a base 64 decoder. We then obtain a hex encoded string which again need to be decoded. 
+  Repeat this process untill we get inctfj{Y0u_@re_Qu1t3_th3_D3c0d3r} as the decoded string.
+
+  The clue is clearly visible in the python code which is provided along with the question. Here, the string is encoded using base 64 and hex format;5 times,each one after the other. So, we need to decode the string 10 times in order to get the flag.
+
+
+2.base-base-base
+  The given base.txt is a base 64 encoded string as there is "==" symbol present at the end of the string.So first we need to decode the whole string using base 64 decoder.
+  Next, on decoding, we get a base 32 string which is a "===" ending string. Using a base 32 decoder,we decode the encoded string.
+  On decoding, we get another string which is in base 16(hex) format. On decoding the hex encoded string, we get inctfj{b4s3s_4r3_c00000000l} as the flag.
+
+
+3.Single byte XOr
+  Here the given string is hex encoded string which has been xored with the letter z. On decoding the string using a hex decoder we get a string which is then xored with z.
+  In the end we get inctfj{x0r_c4n't_b3_e4sily_br0k3n} as the flag.
+ 
+ 
+4.Naive Cipher
+  The given string is ciphered using caeser's cipher method. So, it basically shifts a string of letters a certain number of position up or down the alphabet.
+  Using a caeser's cipher decoder, on giving the key value as 5, we get inctfj{thee_the_master_of_caeser_cipher} as the flag.(Here i have used a c language code to decode the encrypted string)
+
+
+5.Angry Steve
+   Here a jpg format image is given in which the flag is hidden. So, using strings <file_name> command it will display all the readable strings in the file. 
+   On using the above command, we get inctfj{string5_m4keth_fl4gs} as the flag.
+
+
+6. Mischief Kid
+   In this, a mischief.zip is given which can be unzipped using unzip <file_name> command. After unzipping we get an image which is in jpg format. 
+   On using the command binwalk <file_name> we can find the embedded files and executable code in the given file. Here, we find that a zip file is embedded inside the image which contains a flag.txt and busted.png files.
+   Using binwalk -e <file_name>, we get a _mischief.jpg.extracted file inside which there is flag.txt and busted.png files. I also tried foremost -i <file_name. command in which we will get the same files along with additional embedded files and also an audit.txt ehich gives information regarding the extracted files.
+   Using the file command on flag.txt, we find that it is a png file. On renaming it with .png extention , we get a png format image. But the flag.png does not contain the flag.
+   Next, using the file command again for the busted.png file we find that it is a data file. Using ghex, we can view the hex data of the image.
+   Since the first line represent the file type which should be magic numbers, here it is not in magic number format. So, using ghex in insert mode we make the first line as 89 50 4E 47 0D 0A 1A OA which is the magic number for png type files.
+   Now, upon opening the busted.png file we get inctfj{_4e_@aRr4mbB4_u_g0T_m3!} as the flag.
+
+
+7. Snow Man
+   Here a flag.txt file is given in which the flag is concealed using whitespaces and tabs.
+   In order to decode the above text, we use stegsnow -C -p "password" <file_name> command using the password "thisiseasy" which is given as the clue in the text,
+   On using the above command, we get a base 64 encoded string. On decoding the encoded base 64 string using a base 64 decoder, we get inctfj{h4h4_st3gsn0w_i5_c00000001} as the flag.
+
+
+8. Con-The-Cat
+   Here a png format image is given in which the flag is hidden. On using the string command we find a bunch of hex data which is not required.
+   Using the binwalk command, we find that there are a bunch of jpeg format images and zlib compressed data file. Using the binwalk -e command, we get only the zlib compressed file which does not contain the flag.
+   Next, on using the foremost -i command we find that a bunch of jpg format images are extracted in which one of image contains the flag,inctfj(y0u_c4nt_s33_m3!!}.
+
+
+
+
+
+
+
+
+
+
+
+    
